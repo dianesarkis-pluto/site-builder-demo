@@ -18,12 +18,12 @@
       "status": "Open",
       "priority": "P2",
       "assignee": "unassigned",
-      "description": "Editors cannot see which blocks changed between draft and published versions of a page. Add a diff that walks the draft vs published block trees, matches blocks by id, and attaches the changed-block set to renderPreview() output. Must cover add, remove, reorder, and nested-block edge cases.",
+      "description": "Editors cannot see which blocks changed between draft and published versions of a page. Add a diff that walks the draft vs published block trees, matches blocks by id, and attaches the changed-block set. renderPreview does not exist yet; create it as a pure function: renderPreview(page, draftTree, publishedTree) returns {...page, blocks: draftTree, changedBlocks: diffBlocks(publishedTree, draftTree)}. Trees are passed as arguments; do not change how pages are stored.",
       "acceptance": [
         "lib/diff.js walks draft vs published block trees, matched by block id",
-        "pages.js renderPreview() attaches the changed-block set per page",
+        "lib/pages.js gains renderPreview(page, draftTree, publishedTree), a pure function that attaches the changed-block set",
         "tests cover add, remove, reorder, nested blocks",
-        "no change to publish-path behavior"
+        "no change to publish-path behavior or page storage"
       ],
       "links": [
         "lib/pages.js",

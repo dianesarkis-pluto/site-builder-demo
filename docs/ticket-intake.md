@@ -24,13 +24,14 @@ description, and scheduled publishes were broken for an afternoon.
 
 1. Pull the ticket. Restate the scope in two sentences and list the
    acceptance criteria; this restatement is the contract.
-2. Write the spec to specs/SB-<id>.md: contracts, edge cases, explicit
-   out-of-scope list.
+2. Write the spec to specs/SB-<id>.md (create specs/ if it does not
+   exist yet): contracts, edge cases, explicit out-of-scope list.
 3. Write failing tests first: one per acceptance criterion, in test/.
    Red before any implementation.
 4. Implement the smallest diff that turns the suite green.
-5. Run the full suite. Report: spec link, tests added, diff summary,
-   before/after behavior.
+5. Run the full suite: npm test (node --test) is the gate. npm run check
+   is syntax-only and is not sufficient. Report: spec link, tests added,
+   diff summary, before/after behavior.
 
 ## Stop conditions
 
