@@ -20,7 +20,11 @@ rm -rf .claude/skills/intake
 # /reconcile and /new-skill are pre-existing and STAY (SB-51's worker uses
 # /reconcile in Demo 2; /new-skill is Demo 1's builder).
 
-# Demo 2 worker branches + worktrees
+# Demo 2 worker branches + worktrees (prune metadata AND the dirs)
+git worktree list --porcelain 2>/dev/null | awk '/^worktree /{print $2}' | grep -v "^$(pwd)$" | while read -r wt; do
+  git worktree remove --force "$wt" >/dev/null 2>&1 || true
+done
+rm -rf .claude/worktrees
 git worktree prune >/dev/null 2>&1 || true
 git branch --list 'sb-*' | tr -d ' *' | while read -r b; do
   [ -n "$b" ] && git branch -D "$b" >/dev/null 2>&1 || true
