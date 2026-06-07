@@ -16,3 +16,4 @@ npm test      # node --test — one test is failing on purpose (Demo 1)
 - `reset-demo.sh` — restore demo-start state between sessions
 
 No dependencies. Node 18+.
+
