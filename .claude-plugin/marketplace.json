@@ -1,0 +1,13 @@
+{
+  "name": "sqsp-tools",
+  "owner": {
+    "name": "Squarespace Content Platform"
+  },
+  "plugins": [
+    {
+      "name": "sqsp-starter",
+      "source": "./sqsp-starter-plugin",
+      "description": "Ticket-to-PR starter kit: /intake, /reconcile, /new-skill, the page-data guardrail hook, and the team tracker MCP server."
+    }
+  ]
+}
