@@ -1,0 +1,16 @@
+{
+  "pageId": "PG-0042",
+  "previousPublishedRev": "r41",
+  "draftRev": "r47",
+  "driftPct": 1.5,
+  "edits": [
+    {
+      "ts": "2026-03-31T16:20:00.000Z",
+      "rev": "r47",
+      "blockId": "cta",
+      "field": "href",
+      "from": "/signup",
+      "to": "/signup?plan=free"
+    }
+  ]
+}
