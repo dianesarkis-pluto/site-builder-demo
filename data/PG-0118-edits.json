@@ -1,0 +1,19 @@
+{
+  "pageId": "PG-0118",
+  "slug": "pricing",
+  "publishedRev": "r88",
+  "draftRev": "r95",
+  "driftPct": 3.7,
+  "firstEditAt": "2026-03-30T11:00:00.000Z",
+  "lastEditAt": "2026-03-31T15:05:00.000Z",
+  "publishedRef": { "blockCount": 9, "planCount": 3, "highlightPlan": "Business" },
+  "edits": [
+    { "ts": "2026-03-30T11:20:00.000Z", "rev": "r89", "blockId": "plan-personal", "field": "price", "from": "$16", "to": "$18" },
+    { "ts": "2026-03-30T13:40:00.000Z", "rev": "r90", "blockId": "plan-business", "field": "price", "from": "$23", "to": "$25" },
+    { "ts": "2026-03-30T17:55:00.000Z", "rev": "r91", "blockId": "plan-commerce", "field": "price", "from": "$36", "to": "$40" },
+    { "ts": "2026-03-31T09:15:00.000Z", "rev": "r92", "blockId": "highlight", "field": "plan", "from": "Business", "to": "Commerce" },
+    { "ts": "2026-03-31T10:50:00.000Z", "rev": "r93", "blockId": "faq-1", "field": "answer", "from": "Yes.", "to": "Yes, on annual plans." },
+    { "ts": "2026-03-31T13:30:00.000Z", "rev": "r94", "blockId": "cta", "field": "label", "from": "Choose plan", "to": "Pick a plan" },
+    { "ts": "2026-03-31T15:05:00.000Z", "rev": "r95", "blockId": "plan-personal", "field": "features", "from": "5 items", "to": "unlimited items" }
+  ]
+}

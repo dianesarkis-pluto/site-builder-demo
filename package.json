@@ -1,0 +1,9 @@
+{
+  "name": "site-builder",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check lib/schedule.js && node --check lib/pages.js && node --check lib/blocks.js && echo 'syntax ok'"
+  }
+}

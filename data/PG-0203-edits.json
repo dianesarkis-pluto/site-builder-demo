@@ -1,0 +1,20 @@
+{
+  "pageId": "PG-0203",
+  "slug": "blog/spring-sale",
+  "publishedRev": "r12",
+  "draftRev": "r31",
+  "driftPct": 8.2,
+  "note": "Over the 5% cap — /reconcile must refuse and flag for manual review, not auto-sync. A human needs to look at why the draft diverged this far.",
+  "firstEditAt": "2026-03-29T08:00:00.000Z",
+  "lastEditAt": "2026-03-31T19:40:00.000Z",
+  "publishedRef": { "blockCount": 7, "headline": "Spring Sale", "endsAt": "2026-04-15" },
+  "edits": [
+    { "ts": "2026-03-29T08:30:00.000Z", "rev": "r16", "blockId": "hero", "field": "headline", "from": "Spring Sale", "to": "Spring Sale — 30% off" },
+    { "ts": "2026-03-29T12:10:00.000Z", "rev": "r19", "blockId": "hero", "field": "image", "from": "spring-1.jpg", "to": "spring-hero-v2.jpg" },
+    { "ts": "2026-03-30T09:45:00.000Z", "rev": "r22", "blockId": "countdown", "field": "endsAt", "from": "2026-04-15", "to": "2026-04-22" },
+    { "ts": "2026-03-30T16:20:00.000Z", "rev": "r25", "blockId": "grid", "field": "layout", "from": "3-col", "to": "masonry" },
+    { "ts": "2026-03-31T11:05:00.000Z", "rev": "r28", "blockId": "cta", "field": "label", "from": "Shop now", "to": "Shop the sale" },
+    { "ts": "2026-03-31T14:30:00.000Z", "rev": "r30", "blockId": "section-new", "field": "type", "from": "", "to": "section" },
+    { "ts": "2026-03-31T19:40:00.000Z", "rev": "r31", "blockId": "footer", "field": "text", "from": "Spring Sale", "to": "Spring Sale ends soon" }
+  ]
+}

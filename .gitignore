@@ -1,0 +1,3 @@
+node_modules/
+.reconcile-history/
+.DS_Store

@@ -1,0 +1,7 @@
+{
+  "name": "sqsp-starter",
+  "description": "Ticket-to-PR starter kit: the /reconcile skill, the page-data guardrail hook, and the team tracker MCP server, packaged so a fresh clone gets the whole workflow in one install.",
+  "author": {
+    "name": "Squarespace Content Platform"
+  }
+}
