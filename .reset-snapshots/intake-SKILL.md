@@ -14,13 +14,18 @@ description: Take a tracker ticket from Open to verified implementation; spec fi
 ## Steps
 1. Pull the ticket. Restate scope in two sentences; list the acceptance
    criteria. This restatement is the contract.
-2. Write the spec to specs/SB-<id>.md: contracts, edge cases, explicit
-   out-of-scope.
-3. Write failing tests FIRST, one per acceptance criterion. Red before
-   any implementation.
+2. Write a SHORT spec to specs/SB-<id>.md: contracts, edge cases,
+   explicit out-of-scope. Aim for 15 lines; a contract, not docs.
+3. Write failing tests FIRST, one per acceptance criterion, no more.
+   Red before any implementation.
 4. Implement the smallest diff that turns the suite green.
 5. Run the full suite (npm test). Report: spec link, tests added, diff
    summary, before/after.
+
+## Keep it lean
+- Read only the ticket and the files it names (plus their tests); do
+  not survey the codebase.
+- Run the suite twice total: once red, once green.
 
 ## Stop conditions
 - Acceptance criterion conflicts with CLAUDE.md policy: stop and flag.
