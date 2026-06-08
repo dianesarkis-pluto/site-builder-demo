@@ -18,6 +18,7 @@ cp .reset-snapshots/CLAUDE-filled.md CLAUDE.md        # Advanced starts BRIEFED 
 rm -rf .reconcile-history/                            # clear /reconcile snapshots
 rm -rf specs/                                         # /intake writes specs/SB-*.md
 rm -f  lib/diff.js lib/report.js                      # SB-47 / SB-54 implementations
+rm -f  test/diff.test.js test/report.test.js          # their test files
 rm -f  .mcp.json                                      # Demo 3 wires the tracker live (project scope)
 
 # Demo 1 builds the intake skill live with /new-skill; the session starts
