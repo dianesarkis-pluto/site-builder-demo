@@ -22,12 +22,12 @@ rm -f  lib/diff.js lib/report.js                      # SB-47 / SB-54 implementa
 rm -f  test/diff.test.js test/report.test.js          # their test files
 rm -f  .mcp.json                                      # Demo 3 wires the tracker live (project scope)
 
-# Demo 1 builds the intake skill live with /new-skill; the session starts
+# Demo 1 builds the intake skill live with /skillbuilder; the session starts
 # WITHOUT it. Canonical copy: .reset-snapshots/intake-SKILL.md (recovery:
 # cp it to .claude/skills/intake/SKILL.md if the live build goes off-script).
 rm -rf .claude/skills/intake
-# /reconcile and /new-skill are pre-existing and STAY (SB-51's worker uses
-# /reconcile in Demo 2; /new-skill is Demo 1's builder).
+# /reconcile and /skillbuilder are pre-existing and STAY (SB-51's worker uses
+# /reconcile in Demo 2; /skillbuilder is Demo 1's builder).
 
 # Demo 2 worker branches + worktrees (prune metadata AND the dirs).
 # Trailing || true: under pipefail, grep exits 1 when there are no extra

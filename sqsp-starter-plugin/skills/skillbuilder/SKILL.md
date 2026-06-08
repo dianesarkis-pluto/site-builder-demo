@@ -1,9 +1,9 @@
 ---
-name: new-skill
-description: Scaffold a new reusable skill, either through a short interview or directly from a policy doc / runbook ("/new-skill <name> from <path>"). Use when someone says "make this a skill", "codify this workflow", or has just done the same procedure by hand for the second time. Not for one-off tasks; skills are for procedures that repeat.
+name: skillbuilder
+description: Scaffold a new reusable skill, either through a short interview or directly from a policy doc / runbook ("/skillbuilder <name> from <path>"). Use when someone says "make this a skill", "codify this workflow", or has just done the same procedure by hand for the second time. Not for one-off tasks; skills are for procedures that repeat.
 ---
 
-# /new-skill [name] [from <doc>]
+# /skillbuilder [name] [from <doc>]
 
 Interview the user, then generate a production-grade SKILL.md. Ask the
 questions in one batch. Do not pad the scaffold with rules the user did not
@@ -12,7 +12,7 @@ give you; an invented constraint is worse than a missing one.
 ## From a doc
 
 When the user points at a policy doc, runbook, or transcript
-(`/new-skill <name> from <path>`), that doc is the answer sheet: skip the
+(`/skillbuilder <name> from <path>`), that doc is the answer sheet: skip the
 interview, map its rules onto the scaffold below, and list any interview
 question the doc leaves unanswered as open questions at the end of the
 draft. Do not invent rules to fill the gaps.
