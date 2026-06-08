@@ -12,7 +12,8 @@ cd "$(dirname "$0")"
 # Demos end on an sb-* branch; reset means main, discarding demo edits
 git checkout -f main >/dev/null 2>&1 || true
 
-cp .reset-snapshots/schedule.js     lib/schedule.js   # bug state; preflight sed re-applies the fix
+cp .reset-snapshots/schedule.js     lib/schedule.js   # Foundations bug state...
+sed -i '' 's/Math.ceil/Math.floor/' lib/schedule.js   # ...with its fix applied (Advanced starts post-Foundations, tests green)
 cp .reset-snapshots/pages.js        lib/pages.js      # un-reconcile pages
 cp .reset-snapshots/CLAUDE-filled.md CLAUDE.md        # Advanced starts BRIEFED (causality + policy)
 rm -rf .reconcile-history/                            # clear /reconcile snapshots
