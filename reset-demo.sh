@@ -5,6 +5,13 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+# Brace-wrapped so bash parses the whole script before running any of it
+# (git checkout below rewrites this very file when branches diverge).
+{
+
+# Demos end on an sb-* branch; reset means main, discarding demo edits
+git checkout -f main >/dev/null 2>&1 || true
+
 cp .reset-snapshots/schedule.js     lib/schedule.js   # bug state; preflight sed re-applies the fix
 cp .reset-snapshots/pages.js        lib/pages.js      # un-reconcile pages
 cp .reset-snapshots/CLAUDE-filled.md CLAUDE.md        # Advanced starts BRIEFED (causality + policy)
@@ -20,10 +27,12 @@ rm -rf .claude/skills/intake
 # /reconcile and /new-skill are pre-existing and STAY (SB-51's worker uses
 # /reconcile in Demo 2; /new-skill is Demo 1's builder).
 
-# Demo 2 worker branches + worktrees (prune metadata AND the dirs)
+# Demo 2 worker branches + worktrees (prune metadata AND the dirs).
+# Trailing || true: under pipefail, grep exits 1 when there are no extra
+# worktrees, which must not abort the reset.
 git worktree list --porcelain 2>/dev/null | awk '/^worktree /{print $2}' | grep -v "^$(pwd)$" | while read -r wt; do
   git worktree remove --force "$wt" >/dev/null 2>&1 || true
-done
+done || true
 rm -rf .claude/worktrees
 git worktree prune >/dev/null 2>&1 || true
 git branch --list 'sb-*' | tr -d ' *' | while read -r b; do
@@ -31,3 +40,5 @@ git branch --list 'sb-*' | tr -d ' *' | while read -r b; do
 done
 
 echo "reset: lib + CLAUDE.md restored · history/specs/diff/report cleared · .mcp.json removed · intake skill removed (Demo 1 builds it) · sb-* branches pruned"
+exit 0
+}
