@@ -22,6 +22,12 @@ rm -f  lib/diff.js lib/report.js                      # SB-47 / SB-54 implementa
 rm -f  test/diff.test.js test/report.test.js          # their test files
 rm -f  .mcp.json                                      # Demo 3 wires the tracker live (project scope)
 
+# The warm-up's planted facts (Marisol / Thursday 9:30 / 40 banners / Dec 12)
+# must exist ONLY in the conversation. Claude auto-saves session context to
+# the demo config's memory dir; if a memory file survives, /compact's restore
+# list shows it on camera and the recall proof is fake. Wipe it.
+rm -f "${CLAUDE_CONFIG_DIR:-$HOME/.claude-demo}/projects/-Users-dianesarkis-demos-site-builder/memory/"*.md 2>/dev/null || true
+
 # Demo 1 builds the intake skill live with the public skill-creator
 # (vendored from anthropics/skills, tracked in this repo); the session
 # starts WITHOUT intake. Canonical copy: .reset-snapshots/intake-SKILL.md
@@ -43,6 +49,6 @@ git branch --list 'sb-*' | tr -d ' *' | while read -r b; do
   [ -n "$b" ] && git branch -D "$b" >/dev/null 2>&1 || true
 done
 
-echo "reset: lib + CLAUDE.md restored · history/specs/diff/report cleared · .mcp.json removed · intake skill removed (Demo 1 builds it) · sb-* branches pruned"
+echo "reset: lib + CLAUDE.md restored · history/specs/diff/report cleared · .mcp.json removed · intake skill removed (Demo 1 builds it) · sb-* branches pruned · demo-config auto-memory wiped"
 exit 0
 }
