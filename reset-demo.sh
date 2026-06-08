@@ -22,14 +22,14 @@ rm -f  lib/diff.js lib/report.js                      # SB-47 / SB-54 implementa
 rm -f  test/diff.test.js test/report.test.js          # their test files
 rm -f  .mcp.json                                      # Demo 3 wires the tracker live (project scope)
 
-# Demo 1 downloads the public skill-creator live, then builds the intake
-# skill with it; the session starts WITHOUT both. Canonical intake copy:
-# .reset-snapshots/intake-SKILL.md (recovery: cp it to
-# .claude/skills/intake/SKILL.md if the live build goes off-script).
-# Local mirror of skill-creator (download recovery): ~/demos/.skill-creator-backup
+# Demo 1 builds the intake skill live with the public skill-creator
+# (vendored from anthropics/skills, tracked in this repo); the session
+# starts WITHOUT intake. Canonical copy: .reset-snapshots/intake-SKILL.md
+# (recovery: cp it to .claude/skills/intake/SKILL.md if the build goes
+# off-script).
 rm -rf .claude/skills/intake
-rm -rf .claude/skills/skill-creator
-# /reconcile is pre-existing and STAYS (SB-51's worker uses it in Demo 2).
+# /reconcile and /skill-creator are pre-existing and STAY (SB-51's worker
+# uses /reconcile in Demo 2; /skill-creator is Demo 1's builder).
 
 # Demo 2 worker branches + worktrees (prune metadata AND the dirs).
 # Trailing || true: under pipefail, grep exits 1 when there are no extra
@@ -43,6 +43,6 @@ git branch --list 'sb-*' | tr -d ' *' | while read -r b; do
   [ -n "$b" ] && git branch -D "$b" >/dev/null 2>&1 || true
 done
 
-echo "reset: lib + CLAUDE.md restored · history/specs/diff/report cleared · .mcp.json removed · intake + skill-creator skills removed (Demo 1 downloads + builds them) · sb-* branches pruned"
+echo "reset: lib + CLAUDE.md restored · history/specs/diff/report cleared · .mcp.json removed · intake skill removed (Demo 1 builds it) · sb-* branches pruned"
 exit 0
 }
