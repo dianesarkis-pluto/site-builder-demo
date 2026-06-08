@@ -9,7 +9,8 @@ description: Take a tracker ticket from Open to verified implementation; spec fi
 - Ticket exists and is Open (tracker MCP get_ticket, or data/tickets.json)
 - Acceptance criteria present and unambiguous; if not, STOP and ask the
   reporter. Never guess scope.
-- Working tree clean. Create branch sb-<id>-<slug>; never work on main.
+- Working tree clean. Create branch sb-<id>-<slug> (slug = slugified,
+  shortened ticket title); never work on main.
 
 ## Steps
 1. Pull the ticket. Restate scope in two sentences; list the acceptance

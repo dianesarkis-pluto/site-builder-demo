@@ -17,8 +17,8 @@ description, and scheduled publishes were broken for an afternoon.
 
 - Ticket exists and is Open (tracker, or data/tickets.json)
 - Acceptance criteria are present and unambiguous
-- Working tree is clean; work happens on a branch named sb-<id>-<slug>,
-  never on main
+- Working tree is clean; work happens on a branch named sb-<id>-<slug>
+  (slug = the ticket title, slugified and shortened), never on main
 
 ## Steps
 
