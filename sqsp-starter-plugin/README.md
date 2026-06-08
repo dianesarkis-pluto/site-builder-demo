@@ -6,7 +6,6 @@ The workshop's artifacts, packaged as one install. A fresh clone gets:
 |---|---|
 | `skills/reconcile/` | `/reconcile <pageId>`: the codified drift-sync procedure (Demo 1) |
 | `skills/intake/` | `/intake`: ticket to verified implementation; spec, failing tests, smallest green diff |
-| `skills/skillbuilder/` | `/skillbuilder`: interview scaffolder that writes your NEXT skill with the same anatomy |
 | `hooks/` | Pre-edit guardrail: blocks direct writes to `data/*-edits.json`, points at `/reconcile` |
 | `.mcp.json` + `servers/` | The team tracker MCP server (`list_tickets`, `get_ticket`) |
 | `data/tickets.json` | Bundled demo tickets (SB-42, SB-47, SB-51) |

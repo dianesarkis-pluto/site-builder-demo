@@ -7,7 +7,7 @@
     {
       "name": "sqsp-starter",
       "source": "./sqsp-starter-plugin",
-      "description": "Ticket-to-PR starter kit: /intake, /reconcile, /skillbuilder, the page-data guardrail hook, and the team tracker MCP server."
+      "description": "Ticket-to-PR starter kit: /intake, /reconcile, the page-data guardrail hook, and the team tracker MCP server."
     }
   ]
 }
