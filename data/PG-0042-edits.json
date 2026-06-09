@@ -1,0 +1,18 @@
+{
+  "pageId": "PG-0042",
+  "slug": "home",
+  "publishedRev": "r41",
+  "draftRev": "r47",
+  "driftPct": 1.5,
+  "firstEditAt": "2026-03-30T09:00:00.000Z",
+  "lastEditAt": "2026-03-31T16:20:00.000Z",
+  "publishedRef": { "blockCount": 12, "heroHeadline": "Build it beautiful", "ctaLabel": "Get started" },
+  "edits": [
+    { "ts": "2026-03-30T09:12:00.000Z", "rev": "r42", "blockId": "hero", "field": "headline", "from": "Build it beautiful", "to": "Build it beautiful." },
+    { "ts": "2026-03-30T14:48:00.000Z", "rev": "r43", "blockId": "hero", "field": "subhead", "from": "", "to": "Websites for every idea" },
+    { "ts": "2026-03-31T08:05:00.000Z", "rev": "r44", "blockId": "cta", "field": "label", "from": "Get started", "to": "Start free" },
+    { "ts": "2026-03-31T11:30:00.000Z", "rev": "r45", "blockId": "gallery-1", "field": "caption", "from": "Our work", "to": "Recent work" },
+    { "ts": "2026-03-31T15:10:00.000Z", "rev": "r46", "blockId": "footer", "field": "text", "from": "(c) 2025", "to": "(c) 2026" },
+    { "ts": "2026-03-31T16:20:00.000Z", "rev": "r47", "blockId": "cta", "field": "href", "from": "/signup", "to": "/signup?plan=free" }
+  ]
+}

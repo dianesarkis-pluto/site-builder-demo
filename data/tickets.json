@@ -1,0 +1,97 @@
+{
+  "tickets": [
+    {
+      "id": "SB-42",
+      "title": "Homepage banner reports one extra day live",
+      "status": "Done",
+      "priority": "P1",
+      "assignee": "content-platform",
+      "description": "PG-0042 banner scheduled for 15 days reported 16 in the content report. Root cause: Math.ceil on elapsed/MS_PER_DAY; the publish queue unschedules a few hundred ms after midnight, so 15.0048 ceiled to 16. Fixed by flooring per CLAUDE.md guidance.",
+      "links": [
+        "lib/schedule.js",
+        "test/schedule.test.js"
+      ]
+    },
+    {
+      "id": "SB-47",
+      "title": "Add draft/publish diff for content blocks",
+      "status": "Open",
+      "priority": "P2",
+      "assignee": "unassigned",
+      "description": "Editors cannot see which blocks changed between draft and published versions of a page. Add a diff that walks the draft vs published block trees, matches blocks by id, and attaches the changed-block set. renderPreview does not exist yet; create it as a pure function: renderPreview(page, draftTree, publishedTree) returns {...page, blocks: draftTree, changedBlocks: diffBlocks(publishedTree, draftTree)}. Trees are passed as arguments; do not change how pages are stored.",
+      "acceptance": [
+        "lib/diff.js walks draft vs published block trees, matched by block id",
+        "lib/pages.js gains renderPreview(page, draftTree, publishedTree), a pure function that attaches the changed-block set",
+        "tests cover add, remove, reorder, nested blocks",
+        "no change to publish-path behavior or page storage"
+      ],
+      "links": [
+        "lib/pages.js",
+        "lib/blocks.js"
+      ]
+    },
+    {
+      "id": "SB-51",
+      "title": "Reconcile request: PG-0203 drift above threshold",
+      "status": "Open",
+      "priority": "P3",
+      "assignee": "content-platform",
+      "description": "Weekly drift report flags PG-0203 at 2.9% draft/published drift. Within the 5% auto-reconcile policy. Run the standard reconcile procedure and attach the before/after summary.",
+      "links": [
+        "data/PG-0203-edits.json",
+        "docs/reconcile-policy.md"
+      ]
+    },
+    {
+      "id": "SB-52",
+      "title": "Preview crashes on blocks with empty titles",
+      "status": "Open",
+      "priority": "P2",
+      "assignee": "unassigned",
+      "description": "renderPreview throws when a block title is an empty or whitespace-only string. Guard it: treat empty/whitespace titles as 'Untitled' and never throw. No change to publish-path behavior.",
+      "acceptance": [
+        "lib/blocks.js treats empty or whitespace-only titles as 'Untitled' without throwing",
+        "tests cover '', '   ', and missing title",
+        "no change to publish-path behavior"
+      ],
+      "links": [
+        "lib/blocks.js"
+      ]
+    },
+    {
+      "id": "SB-53",
+      "title": "Page summary: include block count and last-modified",
+      "status": "Open",
+      "priority": "P3",
+      "assignee": "unassigned",
+      "description": "The page summary used by the content report should include the page's block count and the timestamp of its most recent edit (from data/<pageId>-edits.json).",
+      "acceptance": [
+        "lib/pages.js exposes a summary that includes blockCount and lastModified",
+        "lastModified comes from the newest entry in the page's edits file; pages with no edits report null",
+        "tests cover a page with edits and a page without"
+      ],
+      "links": [
+        "lib/pages.js",
+        "data/PG-0042-edits.json"
+      ]
+    },
+    {
+      "id": "SB-54",
+      "title": "Content report: reconcile history per page",
+      "status": "Open",
+      "priority": "P2",
+      "assignee": "unassigned",
+      "description": "The weekly content report should show, per page, when it was last reconciled and what drift was corrected, read from the .reconcile-history/ snapshots the /reconcile procedure writes. Pages never reconciled are listed as such. Handle a missing .reconcile-history/ directory.",
+      "acceptance": [
+        "lib/report.js reads .reconcile-history/ and returns {pageId, when, driftCorrected} per page",
+        "missing .reconcile-history/ directory yields an empty report, no throw",
+        "tests use fixture snapshots",
+        "no change to publish-path behavior"
+      ],
+      "links": [
+        "docs/reconcile-policy.md",
+        "lib/pages.js"
+      ]
+    }
+  ]
+}

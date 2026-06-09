@@ -1,0 +1,13 @@
+{
+  "name": "qsp-tools",
+  "owner": {
+    "name": "QSP Content Platform"
+  },
+  "plugins": [
+    {
+      "name": "qsp-starter",
+      "source": "./qsp-starter-plugin",
+      "description": "Ticket-to-PR starter kit: /intake, /reconcile, the page-data guardrail hook, and the team tracker MCP server."
+    }
+  ]
+}

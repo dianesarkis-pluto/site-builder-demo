@@ -1,0 +1,37 @@
+{
+  "tickets": [
+    {
+      "id": "SB-42",
+      "title": "Homepage banner reports one extra day live",
+      "status": "Done",
+      "priority": "P1",
+      "assignee": "content-platform",
+      "description": "PG-0042 banner scheduled for 15 days reported 16 in the content report. Root cause: Math.ceil on elapsed/MS_PER_DAY; the publish queue unschedules a few hundred ms after midnight, so 15.0048 ceiled to 16. Fixed by flooring per CLAUDE.md guidance.",
+      "links": ["lib/schedule.js", "test/schedule.test.js"]
+    },
+    {
+      "id": "SB-47",
+      "title": "Add draft/publish diff for content blocks",
+      "status": "Open",
+      "priority": "P2",
+      "assignee": "unassigned",
+      "description": "Editors cannot see which blocks changed between draft and published versions of a page. Add a diff that walks the draft vs published block trees, matches blocks by id, and attaches the changed-block set to renderPreview() output. Must cover add, remove, reorder, and nested-block edge cases.",
+      "acceptance": [
+        "lib/diff.js walks draft vs published block trees, matched by block id",
+        "pages.js renderPreview() attaches the changed-block set per page",
+        "tests cover add, remove, reorder, nested blocks",
+        "no change to publish-path behavior"
+      ],
+      "links": ["lib/pages.js", "lib/blocks.js"]
+    },
+    {
+      "id": "SB-51",
+      "title": "Reconcile request: PG-0203 drift above threshold",
+      "status": "Open",
+      "priority": "P3",
+      "assignee": "content-platform",
+      "description": "Weekly drift report flags PG-0203 at 2.9% draft/published drift. Within the 5% auto-reconcile policy. Run the standard reconcile procedure and attach the before/after summary.",
+      "links": ["data/PG-0203-edits.json", "docs/reconcile-policy.md"]
+    }
+  ]
+}
